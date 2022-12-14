@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'users/:id', to: 'users#show'
     patch '/users/:id', to: 'users#update'
     put '/users/:id', to: 'users#update'
-    delete '/users/:id', to: 'users#update'
+    delete '/users/:id', to: 'users#destroy'
     # get 'users/new' to: 'users#new'
-    patch 'users/:id', to: 'user#edit'
+    # patch 'users/:id', to: 'user#edit'
 end
