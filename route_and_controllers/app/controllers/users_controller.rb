@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
 
         if @user.update(user_params)
-            redirect_to user_url(@user)
+            render json: @user
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
         @user.destroy
 
-        redirect_to user_url
+        render json: @user
     end
 
     private
