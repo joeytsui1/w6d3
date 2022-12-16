@@ -3,7 +3,7 @@ class CreateArtwork < ActiveRecord::Migration[7.0]
     create_table :artworks do |t|
       t.string :title, null: false
       t.string :image_url, null: false
-      t.integer :artist_id, null: false
+      t.references :artist, null: false, foreign_key: {to_table: :users}
       t.timestamps
     end
 

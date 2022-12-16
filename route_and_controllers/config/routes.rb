@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :artwork_shares, only: [:create, :destroy]
 
   resources :users do 
-    resources :artworks, only: :index
+    resources :artworks, only: [:index]
   end
 
   # resources :users do

@@ -1,7 +1,11 @@
 class ArtworksController < ApplicationController
 
     def index
-        @artworks = Artwork.all
+        if params.has_key?(:user_id)
+            @artworks = Artwork.where(artist_id: params[:user_id])
+        else
+            @artworks = Artwork.all
+        end
         render json: @artworks
     end
 
